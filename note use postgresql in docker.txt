@@ -1,0 +1,11 @@
+docker pull postgres:alpine
+docker run --name postgres-0 -e POSTGRES_PASSWORD=password -d -p 5432 -v /custom/mount:/var/lib/postgresql/data postgres
+docker exec -it postgres-0 bash
+bash# psql -U postgres (để login vào tk postgres)
+bash# \du (list ra các user)
+bash# create database test (tạo mới 1 database)
+bash# \l (list ra các database)
+bash# \c test (truy cập/connect vào database test)
+bash# \d (liệt kê các tham chiếu tới database)
+
+docker start postgres-nest
